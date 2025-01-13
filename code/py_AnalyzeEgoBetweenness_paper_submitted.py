@@ -418,11 +418,7 @@ def run_simulation(args):
 
 if __name__ == "__main__":
     # Define simulation settings
-    # Number of repetitions for the simulation.
-    # This should be set to 2000 for comprehensive analysis.
-    # However, due to runtime limitations in Code Ocean,
-    # we reduce the number of repetitions to 50 to ensure the code completes execution within allowed time frames.
-    repititions = 50
+    repititions = 2000
     num_node_values = np.arange(50, 501, 50)
     k = 3  # maximum number of hops to calculate betweenness
     m_values = [4, 6, 8]  # Subset sizes

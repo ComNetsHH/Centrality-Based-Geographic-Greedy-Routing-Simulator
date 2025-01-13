@@ -834,11 +834,7 @@ def run_simulation(args):
 if __name__ == "__main__":
     # Settings and parameters
     a2a_comm_range = 100  # A2A Communication range in km
-    # Number of repetitions for the simulation.
-    # This should be set to 2000 for comprehensive analysis.
-    # However, due to runtime limitations in Code Ocean,
-    # we reduce the number of repetitions to 50 to ensure the code completes execution within allowed time frames.
-    repititions = 50
+    repititions = 2000
     k = 3   # Can be changed to any desired value for k-hop
     num_node_values = np.arange(50, 501, 50)
     max_num_nodes = 500
