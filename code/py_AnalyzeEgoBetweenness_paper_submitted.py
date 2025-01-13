@@ -418,7 +418,7 @@ def run_simulation(args):
 
 if __name__ == "__main__":
     # Define simulation settings
-    repititions = 2000
+    repetitions = 2000
     num_node_values = np.arange(50, 501, 50)
     k = 3  # maximum number of hops to calculate betweenness
     m_values = [4, 6, 8]  # Subset sizes
@@ -442,7 +442,7 @@ if __name__ == "__main__":
     os.makedirs(output_directory, exist_ok=True)
 
     # Set up simulation parameters
-    parameters = list(product(num_node_values, range(repititions), [k]))
+    parameters = list(product(num_node_values, range(repetitions), [k]))
 
     try:
         # Attempt to use the SLURM environment variable to set the number of CPUs

@@ -834,7 +834,7 @@ def run_simulation(args):
 if __name__ == "__main__":
     # Settings and parameters
     a2a_comm_range = 100  # A2A Communication range in km
-    repititions = 2000
+    repetitions = 2000
     k = 3   # Can be changed to any desired value for k-hop
     num_node_values = np.arange(50, 501, 50)
     max_num_nodes = 500
@@ -848,7 +848,7 @@ if __name__ == "__main__":
     # Ensure the output directory exists
     os.makedirs(output_directory, exist_ok=True)
 
-    parameters = list(product(num_node_values, range(repititions), [k]))
+    parameters = list(product(num_node_values, range(repetitions), [k]))
     try:
         # Attempt to use the SLURM environment variable to set the number of CPUs
         ncpus = int(os.environ['SLURM_CPUS_PER_TASK'])
@@ -885,7 +885,7 @@ if __name__ == "__main__":
             **{f'Greedy-{i}': {'success_rate': None} for i in range(1, 4)},
             'BCGR': {'success_rate': None},
             'S-BCR': {'success_rate': None}
-        } for rep in range(repititions)}
+        } for rep in range(repetitions)}
         for num_nodes in num_node_values
     }
 
@@ -935,13 +935,13 @@ if __name__ == "__main__":
         # Write data rows
         for num_nodes in num_node_values:
             # Collect results for each scenario into lists
-            all_dijkstra = [aggregated_results[num_nodes][rep]['Dijkstra'] for rep in range(repititions)]
-            all_greedy = {f'Greedy-{i}': [aggregated_results[num_nodes][rep][f'Greedy-{i}']['success_rate'] for rep in range(repititions)] for i in range(1, 4)}
+            all_dijkstra = [aggregated_results[num_nodes][rep]['Dijkstra'] for rep in range(repetitions)]
+            all_greedy = {f'Greedy-{i}': [aggregated_results[num_nodes][rep][f'Greedy-{i}']['success_rate'] for rep in range(repetitions)] for i in range(1, 4)}
 
 
-            all_bcgr = [aggregated_results[num_nodes][rep]['BCGR']['success_rate'] for rep in range(repititions)]
+            all_bcgr = [aggregated_results[num_nodes][rep]['BCGR']['success_rate'] for rep in range(repetitions)]
 
-            all_sbcr = [aggregated_results[num_nodes][rep]['S-BCR']['success_rate'] for rep in range(repititions)]
+            all_sbcr = [aggregated_results[num_nodes][rep]['S-BCR']['success_rate'] for rep in range(repetitions)]
 
             # Calculate means and MoEs for Dijkstra, Greedy-k, and GSR-Dresults
             mean_dijkstra, _, moe_dijkstra = confidence_interval_init(all_dijkstra)
