@@ -1,7 +1,7 @@
 # Centrality-Based-Geographic-Greedy-Routing-Simulator
 This is the implementation of S-BCR routing algorithm and related analysis on Python.
 
-<!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12911062.svg)](https://doi.org/10.5281/zenodo.12911062) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14637967.svg)](https://doi.org/10.5281/zenodo.14637967)
 
 <!-- # [Centrality-Based-Geographic-Greedy-Routing-Simulator](https://github.com/ComNetsHH/Centrality-Based-Geographic-Greedy-Routing-Simulator) -->
 
